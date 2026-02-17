@@ -1,28 +1,28 @@
-unit uPilaElement;
+unit uPilaLibros;
 
 interface
 
 uses
-    sysutils, uTElement;
+    sysutils, uTLibro;
 
 type
     tnodo = record
-        info: TElement;
+        info: TLibro;
         ant: ^tnodo;
     end;
 
-    tPilaElementos = ^tnodo;
+    tPilaLibros = ^tnodo;
 
     { Inicializa la pila }
-    procedure initialize(var p: tPilaElementos);
+    procedure initialize(var p: tPilaLibros);
     { Agrega un elemento a la pila }
-    procedure push(var p: tPilaElementos; x: TElement);
+    procedure push(var p: tPilaLibros; x: TLibro);
     { Elimina el elemento de la cima de la pila }
-    procedure pop(var p: tPilaElementos);
+    procedure pop(var p: tPilaLibros);
     { Devuelve el elemento de la cima de la pila }
-    procedure peek(p: tPilaElementos; var x: TElement);
+    procedure peek(p: tPilaLibros; var x: TLibro);
     { Devuelve true si la pila está vacía }
-    function isEmpty(p: tPilaElementos): boolean;
+    function isEmpty(p: tPilaLibros): boolean;
 
 
     { ----------------------------------------------------- }
@@ -31,27 +31,27 @@ type
 
     { Imprime los elementos de la pila }
     { Libera los recursos de la pila }
-    procedure clear(var p: tPilaElementos);
+    procedure clear(var p: tPilaLibros);
     { Imprime los elementos de la pila }
-    function toString(p: tPilaElementos): string;
+    function toString(p: tPilaLibros): string;
 
 
 implementation
 
 { Inicializa la pila }
-procedure initialize(var p: tPilaElementos);
+procedure initialize(var p: tPilaLibros);
 begin
     p := nil; { Inicializa la cima de la pila a nil }
 end;
 
 { Devuelve true si la pila está vacía }
-function isEmpty(p: tPilaElementos): boolean;
+function isEmpty(p: tPilaLibros): boolean;
 begin
     isEmpty := p = nil; { Devuelve true si la cima es nil }
 end;
 
 { Agrega un elemento a la pila }
-procedure push(var p: tPilaElementos; x: TElement);
+procedure push(var p: tPilaLibros; x: TLibro);
 var
     nuevo: ^tnodo;
 begin
@@ -62,7 +62,7 @@ begin
 end;
 
 { Elimina el elemento de la cima de la pila }
-procedure pop(var p: tPilaElementos);
+procedure pop(var p: tPilaLibros);
 var
     aux: ^tnodo;
 begin
@@ -75,7 +75,7 @@ begin
 end;
 
 { Devuelve el elemento de la cima de la pila }
-procedure peek(p: tPilaElementos; var x: TElement);
+procedure peek(p: tPilaLibros; var x: TLibro);
 begin
     if not isEmpty(p) then
         x := p^.info; { Devuelve el valor de la cima de la pila }
@@ -86,7 +86,7 @@ end;
     { ----------------------------------------------------- }
 
 { Libera los recursos de la pila }
-procedure clear(var p: tPilaElementos);
+procedure clear(var p: tPilaLibros);
 begin
     while not isEmpty(p) do
     begin
@@ -95,7 +95,7 @@ begin
 end;
 
 { Imprime los elementos de la pila }
-function toString(p: tPilaElementos): string;
+function toString(p: tPilaLibros): string;
 var
     aux: ^tnodo;
     s: string;
@@ -106,7 +106,7 @@ begin
         aux := p; { Inicializa el nodo auxiliar con la cima de la pila }
         while aux <> nil do
         begin
-            s := s + uTElement.toString(aux^.info) + #13#10; { Concatena el elemento a la cadena de texto }
+            s := s + uTLibro.toString(aux^.info) + #13#10; { Concatena el elemento a la cadena de texto }
             aux := aux^.ant; { Avanza al nodo anterior }
         end;
     end;

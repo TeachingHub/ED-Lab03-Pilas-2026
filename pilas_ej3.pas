@@ -1,18 +1,18 @@
 program PilasEj3;
 
 uses
-    sysutils, uTElement, uPilaElement;
+    sysutils, uTLibro, uPilaLibros;
 
 var
-    pila: tPilaElementos;
-    libro: TElement;
+    pila: tPilaLibros;
+    libro: TLibro;
 
-procedure invertirPila(var p: tPilaElementos);
+procedure invertirPila(var p: tPilaLibros);
 begin
     WriteLn('No implementado...');
 end;
 
-procedure imprimirPila(p: tPilaElementos);
+procedure imprimirPila(p: tPilaLibros);
 begin
     writeln(toString(p));
 end;

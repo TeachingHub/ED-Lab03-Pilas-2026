@@ -261,49 +261,49 @@ Ejercicio 2.8: TRUE
 ```
 
 
-# Ejercicio 3: Genericos: Inversión de Pila de Elementos
+# Ejercicio 3: Registros: Inversión de Pila de Libros
 
-En este ejercicio, trabajaremos un TAD genérico. Aquí tomaremos de nuevo el rol de implementador del TAD genérico "Pila de Elementos" y añadiremos al mismo una nueva funcionalidad que permita invertir una pila de elemento. Para ello se proporcionan tres archivos Pascal:
+En este ejercicio, trabajaremos con pilas de registros. Aquí tomaremos de nuevo el rol de implementador del TAD pero esta vez almacenando registros complejos (Libros) en lugar de tipos simples. Añadiremos una nueva funcionalidad que permita invertir una pila de libros. Para ello se proporcionan tres archivos Pascal:
 
-- `uPilaElement.pas`
-- `uTElement.pas`
+- `uPilaLibros.pas`
+- `uTLibro.pas`
 - `pilas_ej3.pas`
 
-##  `uPilaElement.pas`
+##  `uPilaLibros.pas`
 
-Este archivo contiene la definición de la pila de elementos, que permite realizar operaciones básicas sobre una pila que almacena registros de tipo `TElement`. Las operaciones disponibles son: inicializar la pila, agregar un elemento a la pila, eliminar el elemento de la cima de la pila, obtener el elemento de la cima de la pila, comprobar si la pila está vacía e imprimir la pila. No es necesario modificar este archivo.
+Este archivo contiene la definición de la pila de libros, que permite realizar operaciones básicas sobre una pila que almacena registros de tipo `TLibro`. Las operaciones disponibles son: inicializar la pila, agregar un libro a la pila, eliminar el libro de la cima de la pila, obtener el libro de la cima de la pila, comprobar si la pila está vacía e imprimir la pila. No es necesario modificar este archivo.
 
 **Deberías ser capaz de resolver el ejercicio sin necesidad de modificar este archivo**.
 
-## Ejercicio 3.1 `uTElement.pas`
+## Ejercicio 3.1 `uTLibro.pas`
 
-Este archivo define el tipo de registro `TElement`, que representará un libro en este ejercicio. El libro tiene los siguientes campos:
+Este archivo define el tipo de registro `TLibro`, que representará un libro en este ejercicio. El libro tiene los siguientes campos:
 
-- `titulo`: string[50]
+- `titulo`: string[100]
 - `autor`: string[50]
-- `ISBN`: string[50]
-- `idioma`: string[50]
+- `ISBN`: string[20]
+- `idioma`: string[20]
 - `numPaginas`: integer
 
 Además, incluye las dos siguientes funciones:
 
--  **Asignar un elemento a otro**
+-  **Asignar un libro a otro**
     ```pascal
-    procedure assign(var e: TElement; e2 : TElement);
+    procedure assign(var e: TLibro; e2 : TLibro);
     ```
 
-- **Convierte un elemento a cadena**
+- **Convierte un libro a cadena**
     ```pascal
-    function toString(e: TElement): string;
+    function toString(e: TLibro): string;
     ```
 
 ## Ejercicio 3.2 `pilas_ej3.pas`
 
-En este archivo, los estudiantes deben implementar la funcionalidad para invertir una pila de elementos. Se proporcionan las siguientes funciones:
+En este archivo, los estudiantes deben implementar la funcionalidad para invertir una pila de libros. Se proporcionan las siguientes funciones:
 
-- **Invertir la pila**: Define un procedimiento `invertirPila` que invierte el orden de los elementos en la pila.
+- **Invertir la pila**: Define un procedimiento `invertirPila` que invierte el orden de los libros en la pila.
     - **Entradas**:
-        - Pila de elementos.
+        - Pila de libros.
     - **Salida**:
         - Modifica la pila para que los elementos estén en orden inverso.
     - **Ejemplos**:
