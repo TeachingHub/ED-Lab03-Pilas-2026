@@ -100,7 +100,7 @@ Mejora la función `balanceada`, utilizando una pila de caracteres, para que com
     - Devuelve `true` si la expresión está balanceada, es decir, si los paréntesis y corchetes están correctamente cerrados y anidados.
 - **Ejemplos**:
     - `(3+2)*5` -> `true`
-    - `3+(4-2` -> `false`
+    - `3+(4-2]` -> `false`
     - `(3+2)*5+(4-2)` -> `true`
     - `(3(+2)*5)+(4-2` -> `false`
     - `[3+2]*5` -> `true`
@@ -145,7 +145,7 @@ Concretamente, las operaciones que queremos implementar con la pila de enteros e
 ### 2.1 contarElementos: 
 
 Define una función `contarElementos` para contar el número de elementos en una pila. La operación debe realizarse en O(1).
-Puede que modificar el registros tPilaEnterosExt...
+Puede que necesites modificar el registro tPilaEnterosExt para ello.
 - **Entradas**:
     - Pila de enteros.
 - **Salida**:
@@ -188,7 +188,7 @@ Define un procedimiento `popN` para hacer "pop" n veces.
 - **Entradas**:
     - Pila de enteros, entero n.
 - **Salida**:
-    - Modifica la pila eliminando (un máximo de) n elementos de la cima.
+    - Modifica la pila eliminando (un máximo de) n elementos de la cima. Si la pila contiene menos de n elementos, elimina todos los que haya.
 - **Ejemplos**:
     - `popN([1, 2, 3, 4, 5], 2)` -> `[3, 4, 5]`
     - `popN([1, 2, 3, 4, 5], 20)` -> `[]`
@@ -196,25 +196,26 @@ Define un procedimiento `popN` para hacer "pop" n veces.
 
 ### 2.5 sumarN:
 
-Define un procedimiento `sumarN` para sumar los n primeros elementos de una pila y reemplazarlos por su suma.
+Define un procedimiento `sumarN` para sumar los n primeros elementos de una pila y reemplazarlos por su suma. 
 
 - **Entradas**:
     - Pila de enteros, entero n.
 - **Salida**:
-    - Modifica la pila reemplazando los n elementos por la suma de los mismos.
+    - Modifica la pila reemplazando los n elementos por la suma de los mismos. Si la pila contiene menos de n elementos, suma todos los que haya, reemplazándolos por su suma.
 - **Ejemplos**:
     - `sumarN([1, 2, 3, 4, 5], 2)` -> `[3, 3, 4, 5]`
     - `sumarN([1, 2, 3, 4, 5], 5)` -> `[15]`
+    - `sumarN([1, 2, 3, 4, 5], 8)` -> `[15]`
     - `sumarN([1, 2, 3, 4, 5], 0)` -> `[1, 2, 3, 4, 5]`
 
 ### 2.6 invertir:
 
-Define un procedimiento `invertir` para invertir una pila.
+Define un procedimiento `invertir` para invertir los elementos de una pila.
 
 - **Entradas**:
     - Pila de enteros.
 - **Salida**:
-    - Modifica la pila invirtiendo el orden de los elementos.
+    - Modifica la pila invirtiendo el orden de sus elementos.
 - **Ejemplos**:
     - `invertir([1, 2, 3, 4, 5])` -> `[5, 4, 3, 2, 1]`
     - `invertir([])` -> `[]`
@@ -230,6 +231,7 @@ Define un procedimiento `repetirN` para repetir n veces los elementos de la pila
     - Modifica la pila repitiendo n veces los elementos.
 - **Ejemplos**:
     - `repetirN([1, 2, 3], 2)` -> `[1, 1, 2, 2, 3, 3]`
+    - `repetirN([1, 2], 3)` -> `[1, 1, 1, 2, 2, 2]`
     - `repetirN([1, 2, 3], 1)` -> `[1, 2, 3]`
 
 ### 2.8 contarApariciones:
@@ -260,10 +262,9 @@ Ejercicio 2.7: TRUE
 Ejercicio 2.8: TRUE
 ```
 
-
 # Ejercicio 3: Registros: Inversión de Pila de Libros
 
-En este ejercicio, trabajaremos con pilas de registros. Aquí tomaremos de nuevo el rol de implementador del TAD pero esta vez almacenando registros complejos (Libros) en lugar de tipos simples. Añadiremos una nueva funcionalidad que permita invertir una pila de libros. Para ello se proporcionan tres archivos Pascal:
+En este ejercicio, trabajaremos con pilas de registros. Aquí tomaremos de nuevo el rol de implementador del TAD pero esta vez almacenando información compleja (registros de tipo Libro) en lugar de tipos simples. Añadiremos una nueva funcionalidad que permita invertir una pila de libros. Para ello se proporcionan tres archivos Pascal:
 
 - `uPilaLibros.pas`
 - `uTLibro.pas`
@@ -299,7 +300,7 @@ Además, incluye las dos siguientes funciones:
 
 ## Ejercicio 3.2 `pilas_ej3.pas`
 
-En este archivo, los estudiantes deben implementar la funcionalidad para invertir una pila de libros. Se proporcionan las siguientes funciones:
+En este archivo, se debe implementar la funcionalidad para invertir una pila de libros. Se proporcionan las siguientes funciones:
 
 - **Invertir la pila**: Define un procedimiento `invertirPila` que invierte el orden de los libros en la pila.
     - **Entradas**:
@@ -331,21 +332,20 @@ Pila invertida:
 
 # Ejercicio 4: Palabras Palíndromas
 
-En este ejercicio, trabajaremos con la verificación de palabras palíndromas utilizando pilas. Para ello, se proporcionan dos archivos Pascal:
+Una palabra es un palíndromo si se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo: `reconocer`, `oro` o `anilina`. En este ejercicio queremos verificar si una cierta palabra es un palíndromo utilizando pilas. Para ello, se proporcionan dos archivos Pascal:
 
 - `uPilaChar.pas` (desarrollado en el Ejercicio 1)
 - `pilas_ej4.pas`
-
 
 El archivo `uPilaChar.pas` contiene la definición de la pila de caracteres, que se utilizará en este ejercicio. Por otro lado, el archivo `pilas_ej4.pas` es el programa principal que se utilizará para comprobar el correcto funcionamiento de las funciones implementadas.
 
 Concretamente, se deberá implementar la siguiente función:
 
-- **Verificar palíndromo**: Define una función `esPalindromo` que verifica si una palabra es un palíndromo.
+- **Verificar palíndromo**: Define una función `esPalindromo` que verifica si una palabra es un palíndromo o no.
     - **Entradas**:
         - Una cadena de caracteres que representa una palabra.
     - **Salida**:
-        - Devuelve `true` si la palabra es un palíndromo, es decir, si se lee igual de izquierda a derecha que de derecha a izquierda.
+        - Devuelve `true` si la palabra es un palíndromo, y `false` en caso contrario.
     - **Ejemplos**:
         - `anilina` -> `true`
         - `palindromo` -> `false`
@@ -374,7 +374,6 @@ Ejemplo 7: mameluco         FALSE = FALSE OK
 # Ejercicio 5: Operaciones avanzadas con pilas con arrays
 
 En este ejercicio, trabajaremos con operaciones avanzadas de pilas utilizando arrays. Para ello, se proporcionan dos archivos Pascal:
-
 
 - `uPilaIntegerExtendedArray.pas`
 - `pilas_ej5.pas`
