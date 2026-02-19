@@ -128,6 +128,10 @@ Ejemplo 10: (3[+2]*5(+[4-2]     FALSE = FALSE OK
 Ejemplo 11: (3[+2]*5)+[4-2]     TRUE = TRUE  OK
 ```
 
+Visualización de la solución propuesta en clase: 
+
+<img width="1904" height="1228" alt="image" src="https://github.com/user-attachments/assets/1597d8fd-218d-41c6-995b-ca12f238593f" />
+
 
 
 # Ejercicio 2: Operaciones avanzadas con pilas dinámicas
