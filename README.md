@@ -113,19 +113,21 @@ Mejora la función `balanceada`, utilizando una pila de caracteres, para que com
 En el programa principal, `pilas_ej1.pas`, se proporcionan 11 casos de prueba. Una vez hayas implementado las funciones de los ejercicios 1.2 y 1.3 en `pilas_ej1.pas` podrás ejecutar este programa principal y comprobar tu código. Cuando se ejecute, se mostrará una tabla como la siguiente:
 
 ```
-Ejemplo #  Expresión            Res = Esp    OK/ERROR
+Ejemplo #  Expresión            Res = Esp       OK/ERROR
 ---------------------------------------------------------
-Ejemplo 1: (3+2)*5              TRUE = TRUE  OK
-Ejemplo 2: 3+(4-2               FALSE = FALSE OK
-Ejemplo 3: (3+2)*5+(4-2)        TRUE = TRUE  OK
-Ejemplo 4: (3(+2)*5)+(4-2       FALSE = FALSE OK
-Ejemplo 5: [3+2]*5              TRUE = TRUE  OK
-Ejemplo 6: 3+[4-2               FALSE = FALSE OK
-Ejemplo 7: [3+2]*5+[4-2]        TRUE = TRUE  OK
-Ejemplo 8: [3[+2]*5]+[4-2)      FALSE = FALSE OK
-Ejemplo 9: [3[+2]*5)+[4-2]      FALSE = FALSE OK
-Ejemplo 10: (3[+2]*5(+[4-2]     FALSE = FALSE OK
-Ejemplo 11: (3[+2]*5)+[4-2]     TRUE = TRUE  OK
+Ejemplo 1: (3+2)*5              TRUE = TRUE     OK
+Ejemplo 2: 3+(4-2               FALSE = FALSE   OK
+Ejemplo 3: (3+2)*5+(4-2)        TRUE = TRUE     OK
+Ejemplo 4: (3(+2)*5)+(4-2       FALSE = FALSE   OK
+Ejemplo 5: )(                   FALSE = FALSE   OK
+Ejemplo 6: [3+2]*5              TRUE = TRUE     OK
+Ejemplo 7: 3+[4-2               FALSE = FALSE   OK
+Ejemplo 8: [3+2]*5+[4-2]        TRUE = TRUE     OK
+Ejemplo 9: [3[+2]*5]+[4-2)      FALSE = FALSE   OK
+Ejemplo 10: [3[+2]*5)+[4-2]     FALSE = FALSE   OK
+Ejemplo 11: (3[+2]*5(+[4-2]     FALSE = FALSE   OK
+Ejemplo 12: (3[+2]*5)+[4-2]     TRUE = TRUE     OK
+Ejemplo 13: ([)]                FALSE = FALSE   OK
 ```
 
 # Ejercicio 2: Operaciones avanzadas con pilas dinámicas
