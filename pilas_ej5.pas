@@ -223,12 +223,13 @@ begin
     repetirN(p, 2);
     test_correcto := toString(p) = '1 1 2 2 3 3 ';
 
-    { Ejemplo 2: repetirN([1, 2, 3], 0) -> [1, 2, 3] }
+    { Ejemplo 2: repetirN([1, 2, 3], 1) -> [1, 2, 3] }
     ejemplo2 := '1,2,3';
     inicializarPilaConElementos(p, ejemplo2);
-    repetirN(p, 1);
+    repetirN(p, 0);
     test_correcto := test_correcto and (toString(p) = '1 2 3 ');
 end;
+
 
 { Ejercicio 5.8 }
 function testContarApariciones: boolean;
